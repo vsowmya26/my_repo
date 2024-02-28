@@ -1,0 +1,6 @@
+#!/bin/bash
+
+timestamp=`date +'%b_%d_%Y_%H:%M'`
+echo "$timestamp"
+
+git pull && git add --all && git commit -m "$* ${timestamp}" && git push
