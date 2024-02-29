@@ -4,7 +4,7 @@ pipeline{
         stage(sshagent){
             steps {
                     sshagent (credentials: ['ubuntu_cloud']) {
-                    sh 'ssh -o StrictHostKeyChecking=no -l cloudbees 15.206.92.71 uname -a'
+                    sh 'ssh -o StrictHostKeyChecking=no -l ubuntu 15.206.92.71 uname -a'
                      }
                 }
         }
