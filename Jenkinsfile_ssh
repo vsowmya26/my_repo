@@ -1,0 +1,13 @@
+pipeline{
+    agent any
+    stages(
+        stage(sshagent){
+            steps {
+                    sshagent (credentials: ['ubuntu']) {
+                    sh 'ssh -o StrictHostKeyChecking=no -l cloudbees 15.206.92.71 uname -a'
+                     }
+                }
+        }
+    )
+}
+
