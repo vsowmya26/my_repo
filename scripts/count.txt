@@ -1,0 +1,14 @@
+total 40
+-r-------- 1 ubuntu ubuntu    0 Feb  5 11:32 test2.sh
+-r-------- 1 ubuntu ubuntu    0 Feb  5 11:32 test1.sh
+-rwxr-xr-x 1 ubuntu ubuntu  190 Feb  5 11:44 for_if_commands.sh
+-rwxr-xr-x 1 ubuntu ubuntu  160 Feb  5 12:09 array_for.sh
+-rwxr-xr-x 1 ubuntu ubuntu   93 Feb  5 14:39 test.sh
+-rwxr-xr-x 1 ubuntu ubuntu   53 Feb  5 14:47 even_odd_check.sh
+-rwxr-xr-x 1 ubuntu ubuntu  173 Feb  6 02:26 Reverse_word.sh
+-rwxr-xr-x 1 ubuntu ubuntu  340 Feb  6 07:22 Read_CSV.sh
+drwxrwxr-x 2 ubuntu ubuntu 4096 Feb  6 07:31 test3/
+drwxrwxr-x 2 ubuntu ubuntu 4096 Feb  6 07:31 test2/
+drwxrwxr-x 2 ubuntu ubuntu 4096 Feb  6 07:31 test/
+-rwxr-xr-x 1 ubuntu ubuntu  127 Feb  6 07:42 Count_files_Directory.sh
+-rw-rw-r-- 1 ubuntu ubuntu    0 Feb  6 07:51 count.txt
