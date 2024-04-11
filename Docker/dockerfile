@@ -1,0 +1,5 @@
+FROM python:3.9.17-slim-buster
+RUN apt update
+WORKDIR /app
+COPY . . /app
+CMD ["pip3", "install","-r","requirements.txt"]
