@@ -1,6 +1,6 @@
 Description: This template is to create an EC2 instance in ap-south-1
 Resources:
-  MyFirst-CF-SG:
+  MyFirstCFSG:
     Type: AWS::EC2::SecurityGroup
     Properties:
       GroupDescripton: Security group for EC2
@@ -18,11 +18,11 @@ Resources:
           ToPort: 8080
           CidrIp: 0.0.0.0/16
     
-  Myfirst-CF-EC2:
+  MyfirstCFEC2:
     Type: AWS::EC2::Insatnce
     Properties:
       ImageId: ami-09298640a92b2d12c
       InstanceType: t2.micro
       KeyName: cf_ec2_key
       SecurityGroupIds:
-        - !Ref MyFirst-CF-SG
+        - !Ref MyFirstCFSG
