@@ -1,6 +1,6 @@
-FROM python:3.9.17-slim-buster
-RUN apt update
+FROM python:alpine3.19
+RUN apk update
 WORKDIR /app
 COPY . . /app
 RUN pip3 install -r requirements.txt
-CMD ["python3" "app.py"]
+CMD ["python3","app.py"]
