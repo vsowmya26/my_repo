@@ -3,7 +3,7 @@ Resources:
   MyFirstCFSG:
     Type: AWS::EC2::SecurityGroup
     Properties:
-      GroupDescripton: Security group for EC2
+      GroupDescription: Security group for EC2
       SecurityGroupIngress:
         - IpProtocol: tcp
           FromPort: 80
