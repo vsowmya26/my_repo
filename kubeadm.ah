@@ -126,4 +126,4 @@ echo "    4. Run 'kubectl get nodes' on the control-plane to see this node joine
 echo "------------------------------------------------------------------------------------"
 fi
 
-kubeadm token create --print-join-command
+sudo su - kubeadm token create --print-join-command
