@@ -128,5 +128,3 @@ fi
 
 #sudo su - kubeadm token create --print-join-command
 
-sudo su -
-kubeadm join 172.31.39.60:6443 --token 3h80gz.m3xa0xstbd5ojtr6 --discovery-token-ca-cert-hash sha256:28a5fe03f1b0dc1f1918d0b200e73ef2a66d04a14157f1b38037981369ceed6c
