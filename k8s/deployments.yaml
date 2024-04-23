@@ -16,5 +16,5 @@ spec:
   selector:
     matchLabels:
      env: dev
-  labels:
-    env: dev
+   labels:
+     env: dev
