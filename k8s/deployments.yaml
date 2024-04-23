@@ -1,18 +1,19 @@
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: my_deployment
-selector:
-  matchlabels: null
-  environment: dev
+
+
 spec:
   replicas: 5
-  labels:
-    environment: dev
   template:
     containers:
       - name: nginx
         image: nginx
         ports:
           - containerport: 80
+  selector:
+    matchLabels:
+     env: dev
+  labels:
+    env: dev

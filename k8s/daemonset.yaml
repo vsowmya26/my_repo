@@ -1,17 +1,16 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: DaemonSet
 metadata:
-	name: my_deployment 
+ name: my_deamonset
 selector:
-	matchlabels:
-		environment: dev
+ matchlabels:
+  environment: dev
 spec:
-	replicas: 5
-	labels:
-		environment: dev
-	template:
-		containers:
-		-name: nginx
-		image: nginx
-		ports:
-			-containerport: 80
+ labels:
+ environment: dev
+ template:
+ containers:
+ - name: nginx
+   image: nginx
+   ports:
+   - containerport: 80
