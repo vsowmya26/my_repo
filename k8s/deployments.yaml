@@ -2,13 +2,14 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
 	name: my_deployment 
-selector:
-	matchlabels:
-		environment: dev
+
 spec:
 	replicas: 5
 	labels:
 		environment: dev
+	selector:
+		matchlabels:
+			environment: dev
 	template:
 		containers:
 		-name: nginx
