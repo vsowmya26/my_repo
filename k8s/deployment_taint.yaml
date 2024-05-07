@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: deployment-tt
+spec:
+ replicas: 2
+ selector:
+  matchLabels:
+   app: bbox
+ template:
+  metadata:
+   labels:
+    app: bbox
+  spec:
+   containers: 
+   - name: busybox
+     image: busybox
+     ports:
+     - containerPort: 80
+   nodeSelector:
+     env: test

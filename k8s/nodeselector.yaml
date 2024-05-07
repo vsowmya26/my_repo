@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: node-deployment
+ namespace: node-ns
+spec:
+ selector:
+  app: alpha-app
+ replicas: 2
+ template:
+  metadata:
+   labels:
+    app: alpha-app 
+  spec:
+   containers:
+    - name: busybox-node
+      image: busybox
+      ports:
+      - containerPort: 80
+   nodeSelector:
+           label:
+               env: test

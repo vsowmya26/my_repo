@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: deployment-tt
+spec:
+ replicas: 2
+ selector:
+  matchLabels:
+   env: test
+ template:
+  metadata:
+   labels:
+    env: test
+  spec:
+   containers: 
+   - name: busybox-1
+     image: busybox
+     ports:
+     - containerPort: 80
+   tolerations:
+    - key: env
+      value: test
+      effect: NoSchedule
+      operator: Equal
