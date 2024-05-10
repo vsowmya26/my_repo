@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata: 
+ name: practice-deamon
+ namespace: practice-ns
+spec:
+ selector:
+  matchLabels:
+   practice: test
+ template:
+  metadata:
+   labels:
+    practice: test
+  spec:
+   containers:
+    - name: practice-app-deamon
+      image: nginx
+      ports:
+      - containerPort: 8090

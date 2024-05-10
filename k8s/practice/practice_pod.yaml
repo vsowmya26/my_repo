@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ name: practice-pod
+ namespace: practice-ns
+spec:
+ containers:
+  - name: practice-app
+    image: nginx
+    ports:
+    - containerPort: 80
