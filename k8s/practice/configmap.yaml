@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+ name: practice-cm
+ namespace: practice-ns
+data:
+ current_env: test

@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ name: practice-pod-cm
+ namespace: practice-ns
+spec:
+ containers:
+  - name: nginx-cm
+    image: nginx
+    ports:
+    - containerPort: 8090
+    env:
+    - name: CURRENT_ENV
+      valueFrom:
+        configMapKeyRef:
+          name: practice-cm
+          key: current_env
