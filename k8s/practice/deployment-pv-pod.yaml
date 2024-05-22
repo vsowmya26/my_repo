@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: practice-pod-pvc
+ namespace: practice-ns
+spec:
+ replicas: 2
+ selector:
+  matchLabels:
+   app: login
+ template:
+  metadata:
+   labels:
+    app: login
+  spec:
+   containers: 
+   - name: nginx-practice
+     image: nginx
+     ports:
+     - containerPort: 80
+     volumeMounts:
+      - name: pvc-vol
+        mountPath: "/var/lib/nginx"
+   volumes:
+   - name: pvc-vol
+     persistentVolumeClaim:
+      claimName: practice-pvc
+
+
+

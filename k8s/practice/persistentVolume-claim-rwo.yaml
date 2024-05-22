@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
- name: practice-pvc-2
+ name: practice-pvc-rwo
 spec:
  storageClassName: local
  accessModes:
- - ReadWriteMany
+ - ReadWriteOnce
  resources:
   requests:
    storage: 1Gi

@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ name: practice-pod-pvc
+spec:
+ container: 
+  - name: nginx-practice
+    image: nginx
+    ports:
+    - containerPort: 80
+    volumeMounts:
+    - name: pvc-vol
+      mountPath: "/var/lib/nginx"
+ volumes:
+  - name: pvc-vol
+    persistentVolumeClaim:
+     claimName: practice-pvc
+ 
+---
+
+apiVersion: v1
+kind: Pod
+metadata:
+ name: practice-pod-pvc2
+spec:
+ container: 
+  - name: nginx-practice-2
+    image: nginx
+    ports:
+    - containerPort: 80
+    volumeMounts:
+    - name: pvc-vol
+      mountPath: "/var/lib/nginx"
+ volumes:
+  - name: pvc-vol
+    persistentVolumeClaim:
+    claimName: practice-pvc
