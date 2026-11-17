@@ -32,6 +32,9 @@ alert = cpu_usage > 90 or memory_usage > 90
 print(alert)
 
 #-------------------------------------------------
+service_name = "nginx"
+
+approved = service_name == "nginx"
 disk_capacity = 100
 disk_used = 75
 
@@ -61,3 +64,9 @@ print(f"Disk Utilisation: {disk_utlisation}%")
 # Operator precedence determines the order in which operators are evaluated in an expression. Operators with higher precedence are evaluated before those with lower precedence. For example, in the expression `3 + 4 * 2`, the multiplication operator `*` has higher precedence than the addition operator `+`, so the multiplication is performed first, resulting in `3 + 8`, which equals `11`. Understanding operator precedence is important to ensure that expressions are evaluated as intended.
 
 #---------------------------------------------------------------------------------------------
+What is the difference between == and is in Python?
+== checks for equality of values, while is checks for object identity (whether two variables refer to the same object in memory). For example, two different lists with the same content will be equal (==) but not identical (is).
+
+
+Why do we use and in this expression?
+The `and` operator is used to combine multiple conditions in a single expression. It returns True only if all the conditions are True. In the context of server monitoring, we might want to check if multiple metrics are exceeding their thresholds before triggering a critical alert.   
