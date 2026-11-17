@@ -21,31 +21,54 @@ service_running = True
 print(f"Server: {server_name} Health Report")
 #----------------CPU HEALTH-------------------------#
 
-cpu_health = "CRITICAL" if cpu_usage > 90 else "WARNING" if cpu_usage >= 80 else "NORMAL"
+if cpu_usage >= cpu_critical:
+    cpu_health = "CRITICAL"
+elif cpu_usage >= cpu_warning:
+    cpu_health = "WARNING"
+else:
+    cpu_health = "NORMAL"
 print(f"CPU Health: {cpu_health}")
 
 #----------------MEMORY HEALTH-------------------------#
-memory_health = "CRITICAL" if memory_usage > 95 else "WARNING" if memory_usage >= 85 else "NORMAL"
+if memory_usage >= memory_critical:
+    memory_health = "CRITICAL"
+elif memory_usage >= memory_warning:
+    memory_health = "WARNING"
+else:
+    memory_health = "NORMAL"
 print(f"Memory Health: {memory_health}")    
 
 #----------------DISK HEALTH-------------------------#
-disk_health = "CRITICAL" if disk_usage > 90 else "WARNING" if disk_usage >= 80 else "NORMAL"
+if disk_usage >= disk_critical:
+    disk_health = "CRITICAL"
+elif disk_usage >= disk_warning:
+    disk_health = "WARNING"
+else:
+    disk_health = "NORMAL"
 print(f"Disk Health: {disk_health}")    
 
 #----------------SERVICE HEALTH-------------------------#
-service_health = "RUNNING" if service_running else "DOWN"
+if service_running:
+    service_health = "RUNNING"
+else:
+    service_health = "DOWN"
 print(f"Service is : {service_health}")   
 
 #----------------Overall Server HEALTH-------------------------#
-overall_health = "CRITICAL" if cpu_health == "CRITICAL" or memory_health == "CRITICAL" or disk_health == "CRITICAL" else "WARNING" if cpu_health == "WARNING" or memory_health == "WARNING" or disk_health == "WARNING" else "NORMAL"
-print(f"Overall Server Health: {overall_health}")
 
-#----------------------Challenge 1 — Boundary testing-------------------------#
+if cpu_health == "CRITICAL" or memory_health == "CRITICAL" or disk_health == "CRITICAL" or service_health == "DOWN" :
+    print("Overall Server Health: CRITICAL")
+elif cpu_health == "WARNING" or memory_health == "WARNING" or disk_health == "WARNING":
+    print("Overall Server Health: WARNING")
+else:
+    print("Overall Server Health: NORMAL")
+
+# #----------------------Challenge 1 — Boundary testing-------------------------#
 server_name = "prod-web-01"
 
-cpu_usage = 80
-memory_usage = 87
-disk_usage = 70
+cpu_usage = 70
+memory_usage = 70
+disk_usage = 90
 
 
 cpu_warning = 80
@@ -63,27 +86,49 @@ service_running = True
 print(f"Server: {server_name} Health Report")
 #----------------CPU HEALTH-------------------------#
 
-cpu_health = "CRITICAL" if cpu_usage > 90 else "WARNING" if cpu_usage >= 80 else "NORMAL"
+if cpu_usage >= cpu_critical:
+    cpu_health = "CRITICAL"
+elif cpu_usage >= cpu_warning:
+    cpu_health = "WARNING"
+else:
+    cpu_health = "NORMAL"
 print(f"CPU Health: {cpu_health}")
 
 #----------------MEMORY HEALTH-------------------------#
-memory_health = "CRITICAL" if memory_usage > 95 else "WARNING" if memory_usage >= 85 else "NORMAL"
+if memory_usage >= memory_critical:
+    memory_health = "CRITICAL"
+elif memory_usage >= memory_warning:
+    memory_health = "WARNING"
+else:
+    memory_health = "NORMAL"
 print(f"Memory Health: {memory_health}")    
 
 #----------------DISK HEALTH-------------------------#
-disk_health = "CRITICAL" if disk_usage > 90 else "WARNING" if disk_usage >= 80 else "NORMAL"
+if disk_usage >= disk_critical:
+    disk_health = "CRITICAL"
+elif disk_usage >= disk_warning:
+    disk_health = "WARNING"
+else:
+    disk_health =  "NORMAL"
 print(f"Disk Health: {disk_health}")    
 
 #----------------SERVICE HEALTH-------------------------#
-service_health = "RUNNING" if service_running else "DOWN"
+if service_running:
+    service_health = "RUNNING"
+else:
+    service_health = "DOWN"
 print(f"Service is : {service_health}")   
 
 #----------------Overall Server HEALTH-------------------------#
-overall_health = "CRITICAL" if cpu_health == "CRITICAL" else "WARNING" if cpu_health == "WARNING" else "NORMAL"
-print(f"Overall Server Health: {overall_health}")
+if cpu_health == "CRITICAL" or memory_health == "CRITICAL" or disk_health == "CRITICAL" or service_health == "DOWN" :
+    print("Overall Server Health: CRITICAL")
+elif cpu_health == "WARNING" or memory_health == "WARNING" or disk_health == "WARNING":
+    print("Overall Server Health: WARNING")
+else:
+    print("Overall Server Health: NORMAL")
 
 
-#----------------------Challenge 2 — Multiple failures-------------------------#
+# #----------------------Challenge 2 — Multiple failures-------------------------#
 server_name = "prod-web-01"
 
 cpu_usage = 95
@@ -107,27 +152,49 @@ disk_critical = 90
 print(f"Server: {server_name} Health Report")
 #----------------CPU HEALTH-------------------------#
 
-cpu_health = "CRITICAL" if cpu_usage > 90 else "WARNING" if cpu_usage >= 80 else "NORMAL"
+if cpu_usage >= cpu_critical:
+    cpu_health = "CRITICAL"
+elif cpu_usage >= cpu_warning:
+    cpu_health = "WARNING"
+else:
+    cpu_health = "NORMAL"
 print(f"CPU Health: {cpu_health}")
 
 #----------------MEMORY HEALTH-------------------------#
-memory_health = "CRITICAL" if memory_usage > 95 else "WARNING" if memory_usage >= 85 else "NORMAL"
+if memory_usage >= memory_critical:
+    memory_health = "CRITICAL"
+elif memory_usage >= memory_warning:
+    memory_health = "WARNING"
+else:
+    memory_health = "NORMAL"
 print(f"Memory Health: {memory_health}")    
 
 #----------------DISK HEALTH-------------------------#
-disk_health = "CRITICAL" if disk_usage > 90 else "WARNING" if disk_usage >= 80 else "NORMAL"
+if disk_usage >= disk_critical:
+    disk_health = "CRITICAL"
+elif disk_usage >= disk_warning:
+    disk_health = "WARNING"
+else:
+    disk_health =  "NORMAL"
 print(f"Disk Health: {disk_health}")    
 
 #----------------SERVICE HEALTH-------------------------#
-service_health = "RUNNING" if service_running else "DOWN"
+if service_running:
+    service_health = "RUNNING"
+else:
+    service_health = "DOWN"
 print(f"Service is : {service_health}")   
 
 #----------------Overall Server HEALTH-------------------------#
-overall_health = "CRITICAL" if cpu_health == "CRITICAL" or memory_health == "CRITICAL" or disk_health == "CRITICAL" else "WARNING" if cpu_health == "WARNING" or memory_health == "WARNING" or disk_health == "WARNING" else "NORMAL"
-print(f"Overall Server Health: {overall_health}")
+if cpu_health == "CRITICAL" or memory_health == "CRITICAL" or disk_health == "CRITICAL" or service_health == "DOWN" :
+    print("Overall Server Health: CRITICAL")
+elif cpu_health == "WARNING" or memory_health == "WARNING" or disk_health == "WARNING":
+    print("Overall Server Health: WARNING")
+else:
+    print("Overall Server Health: NORMAL")
 
 
--------------------Challenge 3 — Maintenance mode-----------------------
+# -------------------Challenge 3 — Maintenance mode-----------------------
 server_name = "prod-web-01"
 
 cpu_usage = 95
@@ -147,30 +214,52 @@ disk_critical = 90
 
 service_running = True
 
-if maintenance_mode == True:
-    print(f"Server: {server_name} is Server is under maintenance")
+if maintenance_mode:
+    print(f"Server: {server_name} is under maintenance")
 else:
     print(f"Server: {server_name} Health Report")
     #----------------CPU HEALTH-------------------------#
 
-    cpu_health = "CRITICAL" if cpu_usage > 90 else "WARNING" if cpu_usage >= 80 else "NORMAL"
+    if cpu_usage >= cpu_critical:
+        cpu_health = "CRITICAL"
+    elif cpu_usage >= cpu_warning:
+        cpu_health = "WARNING"
+    else:
+        cpu_health = "NORMAL"
     print(f"CPU Health: {cpu_health}")
 
     #----------------MEMORY HEALTH-------------------------#
-    memory_health = "CRITICAL" if memory_usage > 95 else "WARNING" if memory_usage >= 85 else "NORMAL"
+    if memory_usage >= memory_critical:
+        memory_health = "CRITICAL"
+    elif memory_usage >= memory_warning:
+        memory_health = "WARNING"
+    else:
+        memory_health = "NORMAL"
     print(f"Memory Health: {memory_health}")    
 
     #----------------DISK HEALTH-------------------------#
-    disk_health = "CRITICAL" if disk_usage > 90 else "WARNING" if disk_usage >= 80 else "NORMAL"
+    if disk_usage >= disk_critical:
+        disk_health = "CRITICAL"
+    elif disk_usage >= disk_warning:
+        disk_health = "WARNING"
+    else:
+        disk_health =  "NORMAL"
     print(f"Disk Health: {disk_health}")    
 
     #----------------SERVICE HEALTH-------------------------#
-    service_health = "RUNNING" if service_running else "DOWN"
+    if service_running:
+        service_health = "RUNNING"
+    else:
+        service_health = "DOWN"
     print(f"Service is : {service_health}")   
 
     #----------------Overall Server HEALTH-------------------------#
-    overall_health = "CRITICAL" if cpu_health == "CRITICAL" or memory_health == "CRITICAL" or disk_health == "CRITICAL" else "WARNING" if cpu_health == "WARNING" or memory_health == "WARNING" or disk_health == "WARNING" else "NORMAL"
-    print(f"Overall Server Health: {overall_health}")
+    if cpu_health == "CRITICAL" or memory_health == "CRITICAL" or disk_health == "CRITICAL" or service_health == "DOWN":
+        print("Overall Server Health: CRITICAL")
+    elif cpu_health == "WARNING" or memory_health == "WARNING" or disk_health == "WARNING":
+        print("Overall Server Health: WARNING")
+    else:
+        print("Overall Server Health: NORMAL")
 
 
 # What is the difference between if, elif, and else? Give an example from a production server monitoring scenario.
