@@ -1,14 +1,141 @@
+#----------------------Server Health Monitoring Script-------------------------#
 server_name = "prod-web-01"
 
 cpu_usage = 95
 memory_usage = 87
 disk_usage = 70
 
-# cpu_usage = 95
-# memory_usage = 97
-# disk_usage = 95
-# service_running = False
-maintenance_mode = False
+
+cpu_warning = 80
+cpu_critical = 90
+
+memory_warning = 85
+memory_critical = 95
+
+disk_warning = 80
+disk_critical = 90
+
+service_running = True
+
+
+print(f"Server: {server_name} Health Report")
+#----------------CPU HEALTH-------------------------#
+
+cpu_health = "CRITICAL" if cpu_usage > 90 else "WARNING" if cpu_usage >= 80 else "NORMAL"
+print(f"CPU Health: {cpu_health}")
+
+#----------------MEMORY HEALTH-------------------------#
+memory_health = "CRITICAL" if memory_usage > 95 else "WARNING" if memory_usage >= 85 else "NORMAL"
+print(f"Memory Health: {memory_health}")    
+
+#----------------DISK HEALTH-------------------------#
+disk_health = "CRITICAL" if disk_usage > 90 else "WARNING" if disk_usage >= 80 else "NORMAL"
+print(f"Disk Health: {disk_health}")    
+
+#----------------SERVICE HEALTH-------------------------#
+service_health = "RUNNING" if service_running else "DOWN"
+print(f"Service is : {service_health}")   
+
+#----------------Overall Server HEALTH-------------------------#
+overall_health = "CRITICAL" if cpu_health == "CRITICAL" or memory_health == "CRITICAL" or disk_health == "CRITICAL" else "WARNING" if cpu_health == "WARNING" or memory_health == "WARNING" or disk_health == "WARNING" else "NORMAL"
+print(f"Overall Server Health: {overall_health}")
+
+#----------------------Challenge 1 — Boundary testing-------------------------#
+server_name = "prod-web-01"
+
+cpu_usage = 80
+memory_usage = 87
+disk_usage = 70
+
+
+cpu_warning = 80
+cpu_critical = 90
+
+memory_warning = 85
+memory_critical = 95
+
+disk_warning = 80
+disk_critical = 90
+
+service_running = True
+
+
+print(f"Server: {server_name} Health Report")
+#----------------CPU HEALTH-------------------------#
+
+cpu_health = "CRITICAL" if cpu_usage > 90 else "WARNING" if cpu_usage >= 80 else "NORMAL"
+print(f"CPU Health: {cpu_health}")
+
+#----------------MEMORY HEALTH-------------------------#
+memory_health = "CRITICAL" if memory_usage > 95 else "WARNING" if memory_usage >= 85 else "NORMAL"
+print(f"Memory Health: {memory_health}")    
+
+#----------------DISK HEALTH-------------------------#
+disk_health = "CRITICAL" if disk_usage > 90 else "WARNING" if disk_usage >= 80 else "NORMAL"
+print(f"Disk Health: {disk_health}")    
+
+#----------------SERVICE HEALTH-------------------------#
+service_health = "RUNNING" if service_running else "DOWN"
+print(f"Service is : {service_health}")   
+
+#----------------Overall Server HEALTH-------------------------#
+overall_health = "CRITICAL" if cpu_health == "CRITICAL" else "WARNING" if cpu_health == "WARNING" else "NORMAL"
+print(f"Overall Server Health: {overall_health}")
+
+
+#----------------------Challenge 2 — Multiple failures-------------------------#
+server_name = "prod-web-01"
+
+cpu_usage = 95
+memory_usage = 97
+disk_usage = 95
+service_running = False
+
+
+cpu_warning = 80
+cpu_critical = 90
+
+memory_warning = 85
+memory_critical = 95
+
+disk_warning = 80
+disk_critical = 90
+
+
+
+
+print(f"Server: {server_name} Health Report")
+#----------------CPU HEALTH-------------------------#
+
+cpu_health = "CRITICAL" if cpu_usage > 90 else "WARNING" if cpu_usage >= 80 else "NORMAL"
+print(f"CPU Health: {cpu_health}")
+
+#----------------MEMORY HEALTH-------------------------#
+memory_health = "CRITICAL" if memory_usage > 95 else "WARNING" if memory_usage >= 85 else "NORMAL"
+print(f"Memory Health: {memory_health}")    
+
+#----------------DISK HEALTH-------------------------#
+disk_health = "CRITICAL" if disk_usage > 90 else "WARNING" if disk_usage >= 80 else "NORMAL"
+print(f"Disk Health: {disk_health}")    
+
+#----------------SERVICE HEALTH-------------------------#
+service_health = "RUNNING" if service_running else "DOWN"
+print(f"Service is : {service_health}")   
+
+#----------------Overall Server HEALTH-------------------------#
+overall_health = "CRITICAL" if cpu_health == "CRITICAL" or memory_health == "CRITICAL" or disk_health == "CRITICAL" else "WARNING" if cpu_health == "WARNING" or memory_health == "WARNING" or disk_health == "WARNING" else "NORMAL"
+print(f"Overall Server Health: {overall_health}")
+
+
+-------------------Challenge 3 — Maintenance mode-----------------------
+server_name = "prod-web-01"
+
+cpu_usage = 95
+memory_usage = 87
+disk_usage = 70
+
+
+maintenance_mode = True
 cpu_warning = 80
 cpu_critical = 90
 
@@ -55,5 +182,6 @@ else:
 # What is the difference between and and or? How would you use each when checking CPU, memory, and disk health?
 # and - when all conditions need to be true for a specific action. For example, if the CPU usage is above 90% and the memory usage is above 95%, we can set the overall health to "CRITICAL" , when all the conditions met.
 # or - when any of the conditions need to be true for a specific action. For example, if the CPU usage is above 90% or the memory usage is above 95%, we can set the overall health to "CRITICAL" if any of the conditions are met.
+
 # Why should a monitoring script check critical thresholds before warning thresholds? What kind of bug can happen if the order is reversed?
 # If the order is reversed, a server might be reported as "WARNING" when it should be reported as "CRITICAL", leading to delayed response times and potential issues.
