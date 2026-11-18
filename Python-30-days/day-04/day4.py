@@ -34,7 +34,7 @@ attempt = 1
 max_attempts = 3
 service_ready = False
 
-while service_ready == False and attempt <= max_attempts:
+while not service_ready  and attempt <= max_attempts:
     print("Starting service health check...")
     print(f"Attempt: {attempt}")
     # if attempt == 2:
