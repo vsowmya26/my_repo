@@ -1,0 +1,8 @@
+2026-11-20 09:00:01 INFO nginx service started
+2026-11-20 09:01:12 INFO health check successful
+2026-11-20 09:02:15 WARNING CPU usage reached 82%
+2026-11-20 09:03:20 ERROR database connection failed
+2026-11-20 09:04:10 INFO retrying database connection
+2026-11-20 09:05:30 ERROR application timeout
+2026-11-20 09:06:45 WARNING memory usage reached 88%
+2026-11-20 09:07:10 ERROR nginx service unavailable

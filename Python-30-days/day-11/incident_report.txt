@@ -1,0 +1,11 @@
+PRODUCTION INCIDENT REPORT
+--------------------------
+Total log entries: 8
+ERROR count: 3
+WARNING count: 2
+INFO count:3
+
+CRITICAL ERRORS: 
+1. database connection failed
+2. application timeout
+3. nginx service unavailable
