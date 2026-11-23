@@ -1,0 +1,6 @@
+nginx STARTED
+docker STARTED
+postgresql FAILED
+redis STARTED
+jenkins FAILED
+kubelet STARTED
