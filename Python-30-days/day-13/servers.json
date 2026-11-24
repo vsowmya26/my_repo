@@ -1,0 +1,20 @@
+{
+    "prod-web-01": {
+        "cpu": 75,
+        "memory": 65,
+        "disk": 80,
+        "status": "running"
+    },
+    "prod-api-01": {
+        "cpu": 72,
+        "memory": 80,
+        "disk": 95,
+        "status": "running"
+    },
+    "prod-db-01": {
+        "cpu": 65,
+        "memory": 90,
+        "disk": 75,
+        "status": "running"
+    }
+}
