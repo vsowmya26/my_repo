@@ -1,4 +1,4 @@
 server_name,cpu,memory,disk,status
-prod-web-01,85,65,80,running
-prod-api-01,92,80,95,running
+prod-web-01,75,65,80,running
+prod-api-01,72,80,95,running
 prod-db-01,65,90,75,running

@@ -1,0 +1,28 @@
+{
+    "servers": [
+        {
+            "name": "prod-web-01",
+            "cpu": 85,
+            "memory": 70,
+            "disk": 65
+        },
+        {
+            "name": "prod-api-01",
+            "cpu": 92,
+            "memory": 95,
+            "disk": 90
+        },
+        {
+            "name": "prod-db-01",
+            "cpu": 60,
+            "memory": 81,
+            "disk": 69
+        },
+        {
+            "name": "prod-worker-01",
+            "cpu": 45,
+            "memory": 55,
+            "disk": 60
+        }
+    ]
+}

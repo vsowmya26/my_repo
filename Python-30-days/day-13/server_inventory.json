@@ -1,0 +1,42 @@
+[
+{
+        "server_name": "prod-web-01",
+        "environment": "production",
+        "cpu": 85,
+        "memory": 70,
+        "disk": 65,
+        "status": "running"
+    },
+    {
+        "server_name": "prod-api-01",
+        "environment": "production",
+        "cpu": 92,
+        "memory": 95,
+        "disk": 95,
+        "status": "running"
+    },
+    {
+        "server_name": "prod-db-01",
+        "environment": "production",
+        "cpu": 60,
+        "memory": 68,
+        "disk": 69,
+        "status": "running"
+    },
+    {
+        "server_name": "dev-web-01",
+        "environment": "development",
+        "cpu": 95,
+        "memory": 90,
+        "disk": 80,
+        "status": "running"
+    },
+    {
+        "server_name": "prod-worker-01",
+        "environment": "production",
+        "cpu": 96,
+        "memory": 55,
+        "disk": 60,
+        "status": "stopped"
+    }
+]

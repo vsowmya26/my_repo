@@ -1,0 +1,4 @@
+server_name,environment,cpu,memory,disk,status,severity,reason
+prod-web-01,production,85,70,65,running,WARNING,CPU above 80%
+prod-api-01,production,92,95,95,running,WARNING,"CPU above 80%, Memory above 85%, Disk above 90%"
+prod-worker-01,production,96,55,60,stopped,MAINTENANCE,Server status is stopped

@@ -1,0 +1,6 @@
+server_name,environment,cpu,memory,disk,status
+prod-web-01,production,85,70,65,running
+prod-api-01,production,92,95,95,running
+prod-db-01,production,60,68,69,running
+dev-web-01,development,95,90,80,running
+prod-worker-01,production,45,55,60,stopped
